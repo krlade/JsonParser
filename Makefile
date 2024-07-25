@@ -1,13 +1,13 @@
 .PHONY: build run clean test setup_win setup_linux
 
 build:
-	@gcc main.c -Wall -o ./target/main
+	@gcc main.c -Wall -o target/main
 
 run: build
 	@./target/main $(filter-out $@,$(MAKECMDGOALS))
 
 test: 
-	@gcc tests/parser.c -Wall -g -o ./target/parser
+	@gcc tests/parser.c -Wall -g -o target/parser
 	@./target/parser
 
 setup_linux:
